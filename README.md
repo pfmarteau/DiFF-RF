@@ -1,4 +1,4 @@
-# DiFF-RF: a forest of random partitioning trees for point-wise and collective anomaly detection
+# DiFF-RF: forest of random partitioning trees for point-wise and collective anomaly detection
 ![](/fig/DiFF-RF.jpg)
 This code is a simple implementation for the DiFF-RF algorithm described in this [draft paper](https://hal.archives-ouvertes.fr/hal-02882548/document), a semi-supervised approach for detecting point-wise or collective anomalies or outliers given a dataset of 'normal' instances. Please cite this draft paper if you use this code.
 
