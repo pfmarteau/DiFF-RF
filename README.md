@@ -21,7 +21,7 @@ No extra requirement is needed apart numpy.
 
 A running example exploiting 'donnuts' data is given in file testDiFF_RF_Donnuts.py
 
-The API documentation is described in the file html/DiFF-RF-API.html 
+The API documentation (html àr pdf) is described in the file documentation/DiFF-RF-API.(html/pdf)
 (generated using $ pdoc3 DiFF_RF.py --html --force)
 
 Typical usage (close to sklearn api) is as follows:
