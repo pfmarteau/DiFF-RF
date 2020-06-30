@@ -1,8 +1,9 @@
 # DiFF-RF: forest of random partitioning trees for point-wise and collective anomaly detection
 ![](/fig/DiFF-RF.jpg)
-This code is a simple implementation for the DiFF-RF algorithm described in this [draft paper](https://hal.archives-ouvertes.fr/hal-02882548/document), a semi-supervised approach for detecting point-wise or collective anomalies or outliers given a dataset of 'normal' instances. Please cite this draft paper if you use this code.
+This code is a simple implementation for the DiFF-RF algorithm described in this [draft paper](https://hal.archives-ouvertes.fr/hal-02882548/document), a semi-supervised approach for detecting point-wise or collective anomalies or outliers given a dataset of 'normal' instances. It implements a distance measure to a centroid and a frequency of visit mechanism at leaf level to build point-wise and collective anomaly scores. It solves a drawback identified in the Isolation Forest (IF) algorithm and outperforms in general IF and other state of the art methods in anomaly detection on a large set of diversified application datasets.
+Thanks to cite the above mentioned draft paper if you use this code.
 
-It is derived from the code provided by Xiao Han as an implemention of the Isolation Forest algorithm available at [github.com/xhan0909](https://github.com/xhan0909)
+This code is derived from the one provided by Xiao Han as an implemention of the Isolation Forest algorithm available at [github.com/xhan0909](https://github.com/xhan0909)
 
 
 ## Requirements
