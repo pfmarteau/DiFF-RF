@@ -1,0 +1,1657 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.8.3" />
+<title>DiFF_RF API documentation</title>
+<meta name="description" content="Created on Tue Mar 24 12:19:32 2020 …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>DiFF_RF</code></h1>
+</header>
+<section id="section-intro">
+<p>Created on Tue Mar 24 12:19:32 2020</p>
+<p>@author: Pierre-François Marteau (<a href="https://people.irisa.fr/Pierre-Francois.Marteau/">https://people.irisa.fr/Pierre-Francois.Marteau/</a>)</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&#34;&#34;&#34;
+Created on Tue Mar 24 12:19:32 2020
+
+@author: Pierre-François Marteau (https://people.irisa.fr/Pierre-Francois.Marteau/)
+&#34;&#34;&#34;
+
+# Inspired from an implementation of the isolation forest algorithm provided at
+# https://github.com/xhan0909/isolation_forest
+
+import numpy as np
+import time
+from functools import partial
+from multiprocessing import Pool
+
+import random as rn
+
+def getSplit(X):
+    &#34;&#34;&#34;
+    Randomly selects a split value from set of scalar data &#39;X&#39;.
+    Returns the split value.
+    
+    Parameters
+    ----------
+    X : array 
+        Array of scalar values
+    Returns
+    -------
+    float
+        split value
+    &#34;&#34;&#34;
+    xmin = X.min()
+    xmax = X.max()
+    return np.random.uniform(xmin, xmax)
+
+def similarityScore(S, node, alpha):
+    &#34;&#34;&#34;
+    Given a set of instances S falling into node and a value alpha &gt;=0,
+    returns for all element x in S the weighted similarity score between x
+    and the centroid M of S (node.M)
+    
+    Parameters
+    ----------
+    S : array  of instances
+        Array  of instances that fall into a node
+    node: a DiFF tree node
+        S is the set of instances &#34;falling&#34; into the node
+    alpha: float
+        alpha is the distance scaling hyper-parameter
+    Returns
+    -------
+    array
+        the array of similarity values between the instances in S and the mean of training instances falling in node
+
+    &#34;&#34;&#34;
+    d = np.shape(S)[1]
+    if len(S) &gt; 0:
+        d = np.shape(S)[1]
+        U = (S-node.M)/node.Mstd # normalize using the standard deviation vector to the mean
+        U = (2)**(-alpha*(np.sum(U*U/d, axis=1)))
+    else:
+        U = 0
+
+    return U
+
+
+def EE(hist):
+    &#34;&#34;&#34;
+    given a list of positive values as a histogram drawn from any information source,
+    returns the empirical entropy of its discrete probability function.
+    
+    Parameters
+    ----------
+    hist: array 
+        histogram
+    Returns
+    -------
+    float
+        empirical entropy estimated from the histogram
+
+    &#34;&#34;&#34;
+    h = np.asarray(hist, dtype=np.float64)
+    if h.sum() &lt;= 0 or (h &lt; 0).any():
+        return 0
+    h = h/h.sum()
+    return -(h*np.ma.log2(h)).sum()
+
+
+def weightFeature(s, nbins):
+    &#39;&#39;&#39;
+    Given a list of values corresponding to a feature dimension, returns a weight (in [0,1]) that is 
+    one minus the normalized empirical entropy, a way to characterize the importance of the feature dimension. 
+    
+    Parameters
+    ----------
+    s: array 
+        list of scalar values corresponding to a feature dimension
+    nbins: int
+        the number of bins used to discretize the feature dimension using an histogram.
+    Returns
+    -------
+    float
+        the importance weight for feature s.
+    &#39;&#39;&#39;
+    if s.min() == s.max():
+        return 0
+    hist = np.histogram(s, bins=nbins, density=True)
+    ent = EE(hist[0])
+    ent = ent/np.log2(nbins)
+    return 1-ent
+
+
+def walk_tree(forest, node, treeIdx, obsIdx, X, featureDistrib, depth=0, alpha=1e-2):
+    &#39;&#39;&#39;
+    Recursive function that walks a tree from an already fitted forest to compute the path length
+    of the new observations.
+    
+    Parameters
+    ----------
+    forest : DiFF_RF 
+        A fitted forest of DiFF trees
+    node: DiFF Tree node
+        the current node
+    treeIdx: int
+        index of the tree that is being walked.
+    obsIdx: array
+        1D array of length n_obs. 1/0 if the obs has reached / has not reached the node.
+    X: nD array. 
+        array of observations/instances.
+    depth: int
+        current depth.
+    Returns
+    -------
+    None
+    &#39;&#39;&#39;
+
+    if isinstance(node, LeafNode):
+        Xnode = X[obsIdx]
+        f = ((node.size+1)/forest.sample_size) / ((1+len(Xnode))/forest.XtestSize)
+        if alpha == 0:
+            forest.LD[obsIdx, treeIdx] = 0
+            forest.LF[obsIdx, treeIdx] = -f
+            forest.LDF[obsIdx, treeIdx] = -f
+        else:
+            z = similarityScore(Xnode, node, alpha)
+            forest.LD[obsIdx, treeIdx] = z
+            forest.LF[obsIdx, treeIdx] = -f
+            forest.LDF[obsIdx, treeIdx] = z*f
+
+    else:
+
+        idx = (X[:, node.splitAtt] &lt;= node.splitValue) * obsIdx
+        walk_tree(forest, node.left, treeIdx, idx, X, featureDistrib, depth + 1, alpha=alpha)
+
+        idx = (X[:, node.splitAtt] &gt; node.splitValue) * obsIdx
+        walk_tree(forest, node.right, treeIdx, idx, X, featureDistrib, depth + 1, alpha=alpha)
+
+
+def create_tree(X, featureDistrib, sample_size, max_height):
+    &#39;&#39;&#39;
+    Creates an DiFF tree using a sample of size sample_size of the original data.
+        
+    Parameters
+    ----------
+    X: nD array. 
+        nD array with the observations. Dimensions should be (n_obs, n_features).
+    sample_size: int
+        Size of the sample from which a DiFF tree is built.
+    max_height: int
+        Maximum height of the tree.
+    Returns
+    -------
+    a DiFF tree
+    &#39;&#39;&#39;
+    rows = np.random.choice(len(X), sample_size, replace=False)
+    featureDistrib = np.array(featureDistrib)
+    return DiFF_Tree(max_height).fit(X[rows, :], featureDistrib)
+
+
+class DiFF_TreeEnsemble:
+    &#39;&#39;&#39;
+    DiFF Forest.
+    Even though all the methods are thought to be public the main functionality of the class is given by:
+    - __init__
+    - __fit__
+    - __predict__
+    &#39;&#39;&#39;
+    def __init__(self, sample_size: int, n_trees: int = 10):
+        &#39;&#39;&#39;
+        Creates the DiFF-RF object.
+        
+        Parameters
+        ----------
+        sample_size: int. 
+            size of the sample randomly drawn from the train instances to build each DiFF tree.  
+        n_trees: int
+            The number of trees in the forest
+        Returns
+        -------
+            None
+        &#39;&#39;&#39;
+
+        self.sample_size = sample_size
+        self.n_trees = n_trees
+        self.alpha=1.0
+        np.random.seed(int(time.time()))
+        rn.seed(int(time.time()))
+
+
+    def fit(self, X: (np.ndarray), n_jobs: int = 4):
+        &#34;&#34;&#34;
+        Fits the algorithm into a model.
+        Given a 2D matrix of observations, create an ensemble of IsolationTree
+        objects and store them in a list: self.trees.  Convert DataFrames to
+        ndarray objects.
+        Uses parallel computing.
+        
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the train instances. Dimensions should be (n_obs, n_features).  
+        n_jobs: int
+            number of parallel jobs that will be launched
+        Returns
+        -------
+            the object itself.
+        &#34;&#34;&#34;
+        self.X = X
+        self.path_normFactor = np.sqrt(len(X))
+
+        self.sample_size = min(self.sample_size, len(X))
+
+        limit_height = 1.0*np.ceil(np.log2(self.sample_size))
+
+        featureDistrib = []
+        nbins = int(len(X)/8)+2
+        for i in range(np.shape(X)[1]):
+            featureDistrib.append(weightFeature(X[:, i], nbins))
+        featureDistrib = np.array(featureDistrib)
+        featureDistrib = featureDistrib/(np.sum(featureDistrib)+1e-5)
+        self.featureDistrib = featureDistrib
+
+        create_tree_partial = partial(create_tree,
+                                      featureDistrib=self.featureDistrib,
+                                      sample_size=self.sample_size,
+                                      max_height=limit_height)
+
+        with Pool(n_jobs) as p:
+            self.trees = p.map(create_tree_partial,
+                               [X for _ in range(self.n_trees)]
+                               )
+        return self
+
+
+    def walk(self, X: np.ndarray) -&gt; np.ndarray:
+        &#34;&#34;&#34;
+        Given a nD matrix of observations, X, compute the average path length,
+        the distance, frequency and collective anomaly scores
+        for instances in X.  Compute the path length for x_i using every
+        tree in self.trees then compute the average for each x_i.  Return an
+        ndarray of shape (len(X),1).
+        
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the instances to be tested. Dimensions should be (n_obs, n_features).   
+        Returns
+        -------
+            None
+        &#34;&#34;&#34;
+
+        self.L = np.zeros((len(X), self.n_trees))
+        self.LD = np.zeros((len(X), self.n_trees))
+        self.LF = np.zeros((len(X), self.n_trees))
+        self.LDF = np.zeros((len(X), self.n_trees))
+
+        for treeIdx, itree in enumerate(self.trees):
+            obsIdx = np.ones(len(X)).astype(bool)
+            walk_tree(self, itree, treeIdx, obsIdx, X, self.featureDistrib, alpha=self.alpha)
+
+
+    def anomaly_score(self, X: np.ndarray, alpha=1) -&gt; np.ndarray:
+        &#34;&#34;&#34;
+        Given a nD matrix of observations, X, compute the anomaly scores
+        for instances in X, returning 3 1D arrays of anomaly scores
+        
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the tested observations to be predicted. Dimensions should be (n_obs, n_features).   
+        alpha: float
+            scaling distance hyper-parameter.
+        Returns
+        -------
+        scD, scF, scFF: 1d arrays
+            respectively the distance scores (point-wise anomaly score), the frequency of visit socres and the collective anomaly scores
+        &#34;&#34;&#34;
+        self.XtestSize = len(X)
+        self.alpha = alpha
+
+        # Get the path length for each of the observations.
+        self.walk(X)
+
+        # Compute the scores from the path lengths (self.L)
+        if self.sample_size &gt; 2:
+            scD = -self.LD.mean(1)
+        elif self.sample_size == 2:
+            scD = -self.LD.mean(1)
+        else:
+            scD = 0
+
+        scF = self.LF.mean(1)
+        scDF = -self.LDF.mean(1)
+        return scD, scF, scDF
+    
+
+    def predict_from_anomaly_scores(self, scores: np.ndarray, threshold: float) -&gt; np.ndarray:
+        &#34;&#34;&#34;
+        Given an array of scores and a score threshold, return an array of
+        the predictions: 1 for any score &gt;= the threshold and 0 otherwise.
+        
+        Parameters
+        ----------
+        scores: 1D array. 
+            1D array of scores. Dimensions should be (n_obs, n_features).   
+        threshold: float
+            Threshold for considering a observation an anomaly, the higher the less anomalies.
+        Returns
+        -------
+        1D array
+            The prediction array corresponding to 1/0 if anomaly/not anomaly respectively.
+
+        :param scores: 1D array. Scores produced by the random forest.
+        :param threshold: Threshold for considering a observation an anomaly, the higher the less anomalies.
+        :return: Return predictions
+        &#34;&#34;&#34;
+        out = scores &gt;= threshold
+        return out*1
+    
+
+    def predict(self, X: np.ndarray, threshold: float) -&gt; np.ndarray:
+        &#34;&#34;&#34;
+        A shorthand for calling anomaly_score() and predict_from_anomaly_scores().
+        
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the tested observations to be predicted. Dimensions should be (n_obs, n_features).   
+        threshold: float
+            Threshold for considering a observation an anomaly, the higher the less anomalies.
+        Returns
+        -------
+        1D array
+            The prediction array corresponding to 1/0 if anomaly/not anomaly respectively.
+        &#34;&#34;&#34;
+
+        scores = self.anomaly_score(X)
+        return self.predict_from_anomaly_scores(scores, threshold)
+
+
+class DiFF_Tree:
+    &#39;&#39;&#39;
+    Construct a tree via randomized splits with maximum height height_limit.
+    &#39;&#39;&#39;
+    def __init__(self, height_limit):
+        &#39;&#39;&#39;
+        Parameters
+        ----------
+        height_limit: int
+            Maximum height of the tree.
+        Returns
+        -------
+        None
+        &#39;&#39;&#39;
+        self.height_limit = height_limit
+
+    def fit(self, X: np.ndarray, featureDistrib: np.array):
+        &#34;&#34;&#34;
+        Given a 2D matrix of observations, create an DiFF tree. Set field
+        self.root to the root of that tree and return it.
+        
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the observations. Dimensions should be (n_obs, n_features).        
+        featureDistrib: 1D array
+            The distribution weight affected to each dimension
+        Returns
+        -------
+        A DIFF tree root.
+        &#34;&#34;&#34;
+        self.root = InNode(X, self.height_limit, featureDistrib, len(X), 0)
+
+        return self.root
+
+
+class InNode:
+    &#39;&#39;&#39;
+    Node of the tree that is not a leaf node.
+    The functionality of the class is:
+    - Do the best split from a sample of randomly chosen
+        dimensions and split points.
+    - Partition the space of observations according to the
+    split and send the along to two different nodes
+    The method usually has a higher complexity than doing it for every point.
+    But because it&#39;s using NumPy it&#39;s more efficient time-wise.
+    &#39;&#39;&#39;
+    def __init__(self, X, height_limit, featureDistrib, sample_size, current_height):
+        &#39;&#39;&#39;
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the training instances that have reached the node.
+        height_limit: int
+            Maximum height of the tree.
+        Xf: nD array. 
+            distribution used to randomly select a dimension (feature) used at parent level. 
+        sample_size: int
+            Size of the sample used to build the tree.
+        current_height: int
+            Current height of the tree.
+        Returns
+        -------
+            None
+        &#39;&#39;&#39;
+
+        self.size = len(X)
+        self.height = current_height+1
+        n_obs, n_features = X.shape
+        next_height = current_height + 1
+        limit_not_reached = height_limit &gt; next_height
+
+        if len(X) &gt; 32:
+            featureDistrib = []
+            nbins = int(len(X)/8)+2
+            for i in range(np.shape(X)[1]):
+                featureDistrib.append(weightFeature(X[:, i], nbins))
+            featureDistrib = np.array(featureDistrib)
+            featureDistrib = featureDistrib/(np.sum(featureDistrib)+1e-5)
+
+        self.featureDistrib = featureDistrib
+
+        cols = np.arange(np.shape(X)[1], dtype=&#39;int&#39;)
+
+        self.splitAtt = rn.choices(cols, weights=featureDistrib)[0]
+        splittingCol = X[:, self.splitAtt]
+        self.splitValue = getSplit(splittingCol)
+        idx = splittingCol &lt;= self.splitValue
+
+        idx = splittingCol &lt;= self.splitValue
+
+        X_aux = X[idx, :]
+
+        self.left = (InNode(X_aux, height_limit, featureDistrib, sample_size, next_height)
+                     if limit_not_reached and X_aux.shape[0] &gt; 5 and (np.any(X_aux.max(0) != X_aux.min(0))) else LeafNode(
+                         X_aux, next_height, X, sample_size))
+
+        idx = np.invert(idx)
+        X_aux = X[idx, :]
+        self.right = (InNode(X_aux, height_limit, featureDistrib, sample_size, next_height)
+                      if limit_not_reached and X_aux.shape[0] &gt; 5 and (np.any(X_aux.max(0) != X_aux.min(0))) else LeafNode(
+                          X_aux, next_height, X, sample_size))
+
+        self.n_nodes = 1 + self.left.n_nodes + self.right.n_nodes
+
+
+class LeafNode:
+    &#39;&#39;&#39;
+    Leaf node
+    The base funcitonality is storing the Mean and standard deviation of the observations in that node.
+    We also evaluate the frequency of visit for training data.
+    &#39;&#39;&#39;
+    def __init__(self, X, height, Xp, sample_size):
+        &#39;&#39;&#39;
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the training instances falling into the leaf node.    
+        height: int
+            Current height of the tree.
+        Xf: nD array. 
+            nD array with the training instances falling into the parent node.    
+        sample_size: int
+            Size of the sample used to build the tree.
+        Returns
+        -------
+            None
+        &#39;&#39;&#39;
+        self.height = height+1
+        self.size = len(X)
+        self.n_nodes = 1
+        self.freq = self.size/sample_size
+        self.freqs = 0
+
+        if len(X) != 0:
+            self.M = np.mean(X, axis=0)
+            if len(X) &gt; 10:
+                self.Mstd = np.std(X, axis=0)
+                self.Mstd[self.Mstd == 0] = 1e-2
+            else:
+                self.Mstd = np.ones(np.shape(X)[1])
+        else:
+            self.M = np.mean(Xp, axis=0)
+            if len(Xp) &gt; 10:
+                self.Mstd = np.std(Xp, axis=0)
+                self.Mstd[self.Mstd == 0] = 1e-2
+            else:
+                self.Mstd = np.ones(np.shape(X)[1])</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="DiFF_RF.EE"><code class="name flex">
+<span>def <span class="ident">EE</span></span>(<span>hist)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>given a list of positive values as a histogram drawn from any information source,
+returns the empirical entropy of its discrete probability function.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>hist</code></strong> :&ensp;<code>array </code></dt>
+<dd>histogram</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>empirical entropy estimated from the histogram</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def EE(hist):
+    &#34;&#34;&#34;
+    given a list of positive values as a histogram drawn from any information source,
+    returns the empirical entropy of its discrete probability function.
+    
+    Parameters
+    ----------
+    hist: array 
+        histogram
+    Returns
+    -------
+    float
+        empirical entropy estimated from the histogram
+
+    &#34;&#34;&#34;
+    h = np.asarray(hist, dtype=np.float64)
+    if h.sum() &lt;= 0 or (h &lt; 0).any():
+        return 0
+    h = h/h.sum()
+    return -(h*np.ma.log2(h)).sum()</code></pre>
+</details>
+</dd>
+<dt id="DiFF_RF.create_tree"><code class="name flex">
+<span>def <span class="ident">create_tree</span></span>(<span>X, featureDistrib, sample_size, max_height)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates an DiFF tree using a sample of size sample_size of the original data.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>X</code></strong> :&ensp;<code>nD array. </code></dt>
+<dd>nD array with the observations. Dimensions should be (n_obs, n_features).</dd>
+<dt><strong><code>sample_size</code></strong> :&ensp;<code>int</code></dt>
+<dd>Size of the sample from which a DiFF tree is built.</dd>
+<dt><strong><code>max_height</code></strong> :&ensp;<code>int</code></dt>
+<dd>Maximum height of the tree.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>a DiFF tree</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_tree(X, featureDistrib, sample_size, max_height):
+    &#39;&#39;&#39;
+    Creates an DiFF tree using a sample of size sample_size of the original data.
+        
+    Parameters
+    ----------
+    X: nD array. 
+        nD array with the observations. Dimensions should be (n_obs, n_features).
+    sample_size: int
+        Size of the sample from which a DiFF tree is built.
+    max_height: int
+        Maximum height of the tree.
+    Returns
+    -------
+    a DiFF tree
+    &#39;&#39;&#39;
+    rows = np.random.choice(len(X), sample_size, replace=False)
+    featureDistrib = np.array(featureDistrib)
+    return DiFF_Tree(max_height).fit(X[rows, :], featureDistrib)</code></pre>
+</details>
+</dd>
+<dt id="DiFF_RF.getSplit"><code class="name flex">
+<span>def <span class="ident">getSplit</span></span>(<span>X)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Randomly selects a split value from set of scalar data 'X'.
+Returns the split value.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>X</code></strong> :&ensp;<code>array </code></dt>
+<dd>Array of scalar values</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>split value</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getSplit(X):
+    &#34;&#34;&#34;
+    Randomly selects a split value from set of scalar data &#39;X&#39;.
+    Returns the split value.
+    
+    Parameters
+    ----------
+    X : array 
+        Array of scalar values
+    Returns
+    -------
+    float
+        split value
+    &#34;&#34;&#34;
+    xmin = X.min()
+    xmax = X.max()
+    return np.random.uniform(xmin, xmax)</code></pre>
+</details>
+</dd>
+<dt id="DiFF_RF.similarityScore"><code class="name flex">
+<span>def <span class="ident">similarityScore</span></span>(<span>S, node, alpha)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Given a set of instances S falling into node and a value alpha &gt;=0,
+returns for all element x in S the weighted similarity score between x
+and the centroid M of S (node.M)</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>S</code></strong> :&ensp;<code>array</code>
+of <code>instances</code></dt>
+<dd>Array
+of instances that fall into a node</dd>
+<dt><strong><code>node</code></strong> :&ensp;<code>a DiFF tree node</code></dt>
+<dd>S is the set of instances "falling" into the node</dd>
+<dt><strong><code>alpha</code></strong> :&ensp;<code>float</code></dt>
+<dd>alpha is the distance scaling hyper-parameter</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>array</code></dt>
+<dd>the array of similarity values between the instances in S and the mean of training instances falling in node</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def similarityScore(S, node, alpha):
+    &#34;&#34;&#34;
+    Given a set of instances S falling into node and a value alpha &gt;=0,
+    returns for all element x in S the weighted similarity score between x
+    and the centroid M of S (node.M)
+    
+    Parameters
+    ----------
+    S : array  of instances
+        Array  of instances that fall into a node
+    node: a DiFF tree node
+        S is the set of instances &#34;falling&#34; into the node
+    alpha: float
+        alpha is the distance scaling hyper-parameter
+    Returns
+    -------
+    array
+        the array of similarity values between the instances in S and the mean of training instances falling in node
+
+    &#34;&#34;&#34;
+    d = np.shape(S)[1]
+    if len(S) &gt; 0:
+        d = np.shape(S)[1]
+        U = (S-node.M)/node.Mstd # normalize using the standard deviation vector to the mean
+        U = (2)**(-alpha*(np.sum(U*U/d, axis=1)))
+    else:
+        U = 0
+
+    return U</code></pre>
+</details>
+</dd>
+<dt id="DiFF_RF.walk_tree"><code class="name flex">
+<span>def <span class="ident">walk_tree</span></span>(<span>forest, node, treeIdx, obsIdx, X, featureDistrib, depth=0, alpha=0.01)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Recursive function that walks a tree from an already fitted forest to compute the path length
+of the new observations.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>forest</code></strong> :&ensp;<code><a title="DiFF_RF" href="#DiFF_RF">DiFF_RF</a> </code></dt>
+<dd>A fitted forest of DiFF trees</dd>
+<dt><strong><code>node</code></strong> :&ensp;<code>DiFF Tree node</code></dt>
+<dd>the current node</dd>
+<dt><strong><code>treeIdx</code></strong> :&ensp;<code>int</code></dt>
+<dd>index of the tree that is being walked.</dd>
+<dt><strong><code>obsIdx</code></strong> :&ensp;<code>array</code></dt>
+<dd>1D array of length n_obs. 1/0 if the obs has reached / has not reached the node.</dd>
+<dt><strong><code>X</code></strong> :&ensp;<code>nD array. </code></dt>
+<dd>array of observations/instances.</dd>
+<dt><strong><code>depth</code></strong> :&ensp;<code>int</code></dt>
+<dd>current depth.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def walk_tree(forest, node, treeIdx, obsIdx, X, featureDistrib, depth=0, alpha=1e-2):
+    &#39;&#39;&#39;
+    Recursive function that walks a tree from an already fitted forest to compute the path length
+    of the new observations.
+    
+    Parameters
+    ----------
+    forest : DiFF_RF 
+        A fitted forest of DiFF trees
+    node: DiFF Tree node
+        the current node
+    treeIdx: int
+        index of the tree that is being walked.
+    obsIdx: array
+        1D array of length n_obs. 1/0 if the obs has reached / has not reached the node.
+    X: nD array. 
+        array of observations/instances.
+    depth: int
+        current depth.
+    Returns
+    -------
+    None
+    &#39;&#39;&#39;
+
+    if isinstance(node, LeafNode):
+        Xnode = X[obsIdx]
+        f = ((node.size+1)/forest.sample_size) / ((1+len(Xnode))/forest.XtestSize)
+        if alpha == 0:
+            forest.LD[obsIdx, treeIdx] = 0
+            forest.LF[obsIdx, treeIdx] = -f
+            forest.LDF[obsIdx, treeIdx] = -f
+        else:
+            z = similarityScore(Xnode, node, alpha)
+            forest.LD[obsIdx, treeIdx] = z
+            forest.LF[obsIdx, treeIdx] = -f
+            forest.LDF[obsIdx, treeIdx] = z*f
+
+    else:
+
+        idx = (X[:, node.splitAtt] &lt;= node.splitValue) * obsIdx
+        walk_tree(forest, node.left, treeIdx, idx, X, featureDistrib, depth + 1, alpha=alpha)
+
+        idx = (X[:, node.splitAtt] &gt; node.splitValue) * obsIdx
+        walk_tree(forest, node.right, treeIdx, idx, X, featureDistrib, depth + 1, alpha=alpha)</code></pre>
+</details>
+</dd>
+<dt id="DiFF_RF.weightFeature"><code class="name flex">
+<span>def <span class="ident">weightFeature</span></span>(<span>s, nbins)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Given a list of values corresponding to a feature dimension, returns a weight (in [0,1]) that is
+one minus the normalized empirical entropy, a way to characterize the importance of the feature dimension. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>s</code></strong> :&ensp;<code>array </code></dt>
+<dd>list of scalar values corresponding to a feature dimension</dd>
+<dt><strong><code>nbins</code></strong> :&ensp;<code>int</code></dt>
+<dd>the number of bins used to discretize the feature dimension using an histogram.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>the importance weight for feature s.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def weightFeature(s, nbins):
+    &#39;&#39;&#39;
+    Given a list of values corresponding to a feature dimension, returns a weight (in [0,1]) that is 
+    one minus the normalized empirical entropy, a way to characterize the importance of the feature dimension. 
+    
+    Parameters
+    ----------
+    s: array 
+        list of scalar values corresponding to a feature dimension
+    nbins: int
+        the number of bins used to discretize the feature dimension using an histogram.
+    Returns
+    -------
+    float
+        the importance weight for feature s.
+    &#39;&#39;&#39;
+    if s.min() == s.max():
+        return 0
+    hist = np.histogram(s, bins=nbins, density=True)
+    ent = EE(hist[0])
+    ent = ent/np.log2(nbins)
+    return 1-ent</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="DiFF_RF.DiFF_Tree"><code class="flex name class">
+<span>class <span class="ident">DiFF_Tree</span></span>
+<span>(</span><span>height_limit)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Construct a tree via randomized splits with maximum height height_limit.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>height_limit</code></strong> :&ensp;<code>int</code></dt>
+<dd>Maximum height of the tree.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DiFF_Tree:
+    &#39;&#39;&#39;
+    Construct a tree via randomized splits with maximum height height_limit.
+    &#39;&#39;&#39;
+    def __init__(self, height_limit):
+        &#39;&#39;&#39;
+        Parameters
+        ----------
+        height_limit: int
+            Maximum height of the tree.
+        Returns
+        -------
+        None
+        &#39;&#39;&#39;
+        self.height_limit = height_limit
+
+    def fit(self, X: np.ndarray, featureDistrib: np.array):
+        &#34;&#34;&#34;
+        Given a 2D matrix of observations, create an DiFF tree. Set field
+        self.root to the root of that tree and return it.
+        
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the observations. Dimensions should be (n_obs, n_features).        
+        featureDistrib: 1D array
+            The distribution weight affected to each dimension
+        Returns
+        -------
+        A DIFF tree root.
+        &#34;&#34;&#34;
+        self.root = InNode(X, self.height_limit, featureDistrib, len(X), 0)
+
+        return self.root</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="DiFF_RF.DiFF_Tree.fit"><code class="name flex">
+<span>def <span class="ident">fit</span></span>(<span>self, X: numpy.ndarray, featureDistrib: <built-in function array>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Given a 2D matrix of observations, create an DiFF tree. Set field
+self.root to the root of that tree and return it.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>X</code></strong> :&ensp;<code>nD array. </code></dt>
+<dd>nD array with the observations. Dimensions should be (n_obs, n_features).</dd>
+<dt><strong><code>featureDistrib</code></strong> :&ensp;<code>1D array</code></dt>
+<dd>The distribution weight affected to each dimension</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A DIFF tree root.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fit(self, X: np.ndarray, featureDistrib: np.array):
+    &#34;&#34;&#34;
+    Given a 2D matrix of observations, create an DiFF tree. Set field
+    self.root to the root of that tree and return it.
+    
+    Parameters
+    ----------
+    X: nD array. 
+        nD array with the observations. Dimensions should be (n_obs, n_features).        
+    featureDistrib: 1D array
+        The distribution weight affected to each dimension
+    Returns
+    -------
+    A DIFF tree root.
+    &#34;&#34;&#34;
+    self.root = InNode(X, self.height_limit, featureDistrib, len(X), 0)
+
+    return self.root</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="DiFF_RF.DiFF_TreeEnsemble"><code class="flex name class">
+<span>class <span class="ident">DiFF_TreeEnsemble</span></span>
+<span>(</span><span>sample_size: int, n_trees: int = 10)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>DiFF Forest.
+Even though all the methods are thought to be public the main functionality of the class is given by:
+- <strong>init</strong>
+- <strong>fit</strong>
+- <strong>predict</strong></p>
+<p>Creates the DiFF-RF object.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>sample_size</code></strong> :&ensp;<code>int. </code></dt>
+<dd>size of the sample randomly drawn from the train instances to build each DiFF tree.</dd>
+<dt><strong><code>n_trees</code></strong> :&ensp;<code>int</code></dt>
+<dd>The number of trees in the forest</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<pre><code>None
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DiFF_TreeEnsemble:
+    &#39;&#39;&#39;
+    DiFF Forest.
+    Even though all the methods are thought to be public the main functionality of the class is given by:
+    - __init__
+    - __fit__
+    - __predict__
+    &#39;&#39;&#39;
+    def __init__(self, sample_size: int, n_trees: int = 10):
+        &#39;&#39;&#39;
+        Creates the DiFF-RF object.
+        
+        Parameters
+        ----------
+        sample_size: int. 
+            size of the sample randomly drawn from the train instances to build each DiFF tree.  
+        n_trees: int
+            The number of trees in the forest
+        Returns
+        -------
+            None
+        &#39;&#39;&#39;
+
+        self.sample_size = sample_size
+        self.n_trees = n_trees
+        self.alpha=1.0
+        np.random.seed(int(time.time()))
+        rn.seed(int(time.time()))
+
+
+    def fit(self, X: (np.ndarray), n_jobs: int = 4):
+        &#34;&#34;&#34;
+        Fits the algorithm into a model.
+        Given a 2D matrix of observations, create an ensemble of IsolationTree
+        objects and store them in a list: self.trees.  Convert DataFrames to
+        ndarray objects.
+        Uses parallel computing.
+        
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the train instances. Dimensions should be (n_obs, n_features).  
+        n_jobs: int
+            number of parallel jobs that will be launched
+        Returns
+        -------
+            the object itself.
+        &#34;&#34;&#34;
+        self.X = X
+        self.path_normFactor = np.sqrt(len(X))
+
+        self.sample_size = min(self.sample_size, len(X))
+
+        limit_height = 1.0*np.ceil(np.log2(self.sample_size))
+
+        featureDistrib = []
+        nbins = int(len(X)/8)+2
+        for i in range(np.shape(X)[1]):
+            featureDistrib.append(weightFeature(X[:, i], nbins))
+        featureDistrib = np.array(featureDistrib)
+        featureDistrib = featureDistrib/(np.sum(featureDistrib)+1e-5)
+        self.featureDistrib = featureDistrib
+
+        create_tree_partial = partial(create_tree,
+                                      featureDistrib=self.featureDistrib,
+                                      sample_size=self.sample_size,
+                                      max_height=limit_height)
+
+        with Pool(n_jobs) as p:
+            self.trees = p.map(create_tree_partial,
+                               [X for _ in range(self.n_trees)]
+                               )
+        return self
+
+
+    def walk(self, X: np.ndarray) -&gt; np.ndarray:
+        &#34;&#34;&#34;
+        Given a nD matrix of observations, X, compute the average path length,
+        the distance, frequency and collective anomaly scores
+        for instances in X.  Compute the path length for x_i using every
+        tree in self.trees then compute the average for each x_i.  Return an
+        ndarray of shape (len(X),1).
+        
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the instances to be tested. Dimensions should be (n_obs, n_features).   
+        Returns
+        -------
+            None
+        &#34;&#34;&#34;
+
+        self.L = np.zeros((len(X), self.n_trees))
+        self.LD = np.zeros((len(X), self.n_trees))
+        self.LF = np.zeros((len(X), self.n_trees))
+        self.LDF = np.zeros((len(X), self.n_trees))
+
+        for treeIdx, itree in enumerate(self.trees):
+            obsIdx = np.ones(len(X)).astype(bool)
+            walk_tree(self, itree, treeIdx, obsIdx, X, self.featureDistrib, alpha=self.alpha)
+
+
+    def anomaly_score(self, X: np.ndarray, alpha=1) -&gt; np.ndarray:
+        &#34;&#34;&#34;
+        Given a nD matrix of observations, X, compute the anomaly scores
+        for instances in X, returning 3 1D arrays of anomaly scores
+        
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the tested observations to be predicted. Dimensions should be (n_obs, n_features).   
+        alpha: float
+            scaling distance hyper-parameter.
+        Returns
+        -------
+        scD, scF, scFF: 1d arrays
+            respectively the distance scores (point-wise anomaly score), the frequency of visit socres and the collective anomaly scores
+        &#34;&#34;&#34;
+        self.XtestSize = len(X)
+        self.alpha = alpha
+
+        # Get the path length for each of the observations.
+        self.walk(X)
+
+        # Compute the scores from the path lengths (self.L)
+        if self.sample_size &gt; 2:
+            scD = -self.LD.mean(1)
+        elif self.sample_size == 2:
+            scD = -self.LD.mean(1)
+        else:
+            scD = 0
+
+        scF = self.LF.mean(1)
+        scDF = -self.LDF.mean(1)
+        return scD, scF, scDF
+    
+
+    def predict_from_anomaly_scores(self, scores: np.ndarray, threshold: float) -&gt; np.ndarray:
+        &#34;&#34;&#34;
+        Given an array of scores and a score threshold, return an array of
+        the predictions: 1 for any score &gt;= the threshold and 0 otherwise.
+        
+        Parameters
+        ----------
+        scores: 1D array. 
+            1D array of scores. Dimensions should be (n_obs, n_features).   
+        threshold: float
+            Threshold for considering a observation an anomaly, the higher the less anomalies.
+        Returns
+        -------
+        1D array
+            The prediction array corresponding to 1/0 if anomaly/not anomaly respectively.
+
+        :param scores: 1D array. Scores produced by the random forest.
+        :param threshold: Threshold for considering a observation an anomaly, the higher the less anomalies.
+        :return: Return predictions
+        &#34;&#34;&#34;
+        out = scores &gt;= threshold
+        return out*1
+    
+
+    def predict(self, X: np.ndarray, threshold: float) -&gt; np.ndarray:
+        &#34;&#34;&#34;
+        A shorthand for calling anomaly_score() and predict_from_anomaly_scores().
+        
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the tested observations to be predicted. Dimensions should be (n_obs, n_features).   
+        threshold: float
+            Threshold for considering a observation an anomaly, the higher the less anomalies.
+        Returns
+        -------
+        1D array
+            The prediction array corresponding to 1/0 if anomaly/not anomaly respectively.
+        &#34;&#34;&#34;
+
+        scores = self.anomaly_score(X)
+        return self.predict_from_anomaly_scores(scores, threshold)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="DiFF_RF.DiFF_TreeEnsemble.anomaly_score"><code class="name flex">
+<span>def <span class="ident">anomaly_score</span></span>(<span>self, X: numpy.ndarray, alpha=1) ‑> numpy.ndarray</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Given a nD matrix of observations, X, compute the anomaly scores
+for instances in X, returning 3 1D arrays of anomaly scores</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>X</code></strong> :&ensp;<code>nD array. </code></dt>
+<dd>nD array with the tested observations to be predicted. Dimensions should be (n_obs, n_features).</dd>
+<dt><strong><code>alpha</code></strong> :&ensp;<code>float</code></dt>
+<dd>scaling distance hyper-parameter.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>scD</code></strong>, <strong><code>scF</code></strong>, <strong><code>scFF</code></strong> :&ensp;<code>1d arrays</code></dt>
+<dd>respectively the distance scores (point-wise anomaly score), the frequency of visit socres and the collective anomaly scores</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def anomaly_score(self, X: np.ndarray, alpha=1) -&gt; np.ndarray:
+    &#34;&#34;&#34;
+    Given a nD matrix of observations, X, compute the anomaly scores
+    for instances in X, returning 3 1D arrays of anomaly scores
+    
+    Parameters
+    ----------
+    X: nD array. 
+        nD array with the tested observations to be predicted. Dimensions should be (n_obs, n_features).   
+    alpha: float
+        scaling distance hyper-parameter.
+    Returns
+    -------
+    scD, scF, scFF: 1d arrays
+        respectively the distance scores (point-wise anomaly score), the frequency of visit socres and the collective anomaly scores
+    &#34;&#34;&#34;
+    self.XtestSize = len(X)
+    self.alpha = alpha
+
+    # Get the path length for each of the observations.
+    self.walk(X)
+
+    # Compute the scores from the path lengths (self.L)
+    if self.sample_size &gt; 2:
+        scD = -self.LD.mean(1)
+    elif self.sample_size == 2:
+        scD = -self.LD.mean(1)
+    else:
+        scD = 0
+
+    scF = self.LF.mean(1)
+    scDF = -self.LDF.mean(1)
+    return scD, scF, scDF</code></pre>
+</details>
+</dd>
+<dt id="DiFF_RF.DiFF_TreeEnsemble.fit"><code class="name flex">
+<span>def <span class="ident">fit</span></span>(<span>self, X: numpy.ndarray, n_jobs: int = 4)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fits the algorithm into a model.
+Given a 2D matrix of observations, create an ensemble of IsolationTree
+objects and store them in a list: self.trees.
+Convert DataFrames to
+ndarray objects.
+Uses parallel computing.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>X</code></strong> :&ensp;<code>nD array. </code></dt>
+<dd>nD array with the train instances. Dimensions should be (n_obs, n_features).</dd>
+<dt><strong><code>n_jobs</code></strong> :&ensp;<code>int</code></dt>
+<dd>number of parallel jobs that will be launched</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<pre><code>the object itself.
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fit(self, X: (np.ndarray), n_jobs: int = 4):
+    &#34;&#34;&#34;
+    Fits the algorithm into a model.
+    Given a 2D matrix of observations, create an ensemble of IsolationTree
+    objects and store them in a list: self.trees.  Convert DataFrames to
+    ndarray objects.
+    Uses parallel computing.
+    
+    Parameters
+    ----------
+    X: nD array. 
+        nD array with the train instances. Dimensions should be (n_obs, n_features).  
+    n_jobs: int
+        number of parallel jobs that will be launched
+    Returns
+    -------
+        the object itself.
+    &#34;&#34;&#34;
+    self.X = X
+    self.path_normFactor = np.sqrt(len(X))
+
+    self.sample_size = min(self.sample_size, len(X))
+
+    limit_height = 1.0*np.ceil(np.log2(self.sample_size))
+
+    featureDistrib = []
+    nbins = int(len(X)/8)+2
+    for i in range(np.shape(X)[1]):
+        featureDistrib.append(weightFeature(X[:, i], nbins))
+    featureDistrib = np.array(featureDistrib)
+    featureDistrib = featureDistrib/(np.sum(featureDistrib)+1e-5)
+    self.featureDistrib = featureDistrib
+
+    create_tree_partial = partial(create_tree,
+                                  featureDistrib=self.featureDistrib,
+                                  sample_size=self.sample_size,
+                                  max_height=limit_height)
+
+    with Pool(n_jobs) as p:
+        self.trees = p.map(create_tree_partial,
+                           [X for _ in range(self.n_trees)]
+                           )
+    return self</code></pre>
+</details>
+</dd>
+<dt id="DiFF_RF.DiFF_TreeEnsemble.predict"><code class="name flex">
+<span>def <span class="ident">predict</span></span>(<span>self, X: numpy.ndarray, threshold: float) ‑> numpy.ndarray</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A shorthand for calling anomaly_score() and predict_from_anomaly_scores().</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>X</code></strong> :&ensp;<code>nD array. </code></dt>
+<dd>nD array with the tested observations to be predicted. Dimensions should be (n_obs, n_features).</dd>
+<dt><strong><code>threshold</code></strong> :&ensp;<code>float</code></dt>
+<dd>Threshold for considering a observation an anomaly, the higher the less anomalies.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>1D array</code></dt>
+<dd>The prediction array corresponding to 1/0 if anomaly/not anomaly respectively.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def predict(self, X: np.ndarray, threshold: float) -&gt; np.ndarray:
+    &#34;&#34;&#34;
+    A shorthand for calling anomaly_score() and predict_from_anomaly_scores().
+    
+    Parameters
+    ----------
+    X: nD array. 
+        nD array with the tested observations to be predicted. Dimensions should be (n_obs, n_features).   
+    threshold: float
+        Threshold for considering a observation an anomaly, the higher the less anomalies.
+    Returns
+    -------
+    1D array
+        The prediction array corresponding to 1/0 if anomaly/not anomaly respectively.
+    &#34;&#34;&#34;
+
+    scores = self.anomaly_score(X)
+    return self.predict_from_anomaly_scores(scores, threshold)</code></pre>
+</details>
+</dd>
+<dt id="DiFF_RF.DiFF_TreeEnsemble.predict_from_anomaly_scores"><code class="name flex">
+<span>def <span class="ident">predict_from_anomaly_scores</span></span>(<span>self, scores: numpy.ndarray, threshold: float) ‑> numpy.ndarray</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Given an array of scores and a score threshold, return an array of
+the predictions: 1 for any score &gt;= the threshold and 0 otherwise.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>scores</code></strong> :&ensp;<code>1D array. </code></dt>
+<dd>1D array of scores. Dimensions should be (n_obs, n_features).</dd>
+<dt><strong><code>threshold</code></strong> :&ensp;<code>float</code></dt>
+<dd>Threshold for considering a observation an anomaly, the higher the less anomalies.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>1D array</code></dt>
+<dd>The prediction array corresponding to 1/0 if anomaly/not anomaly respectively.</dd>
+</dl>
+<p>:param scores: 1D array. Scores produced by the random forest.
+:param threshold: Threshold for considering a observation an anomaly, the higher the less anomalies.
+:return: Return predictions</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def predict_from_anomaly_scores(self, scores: np.ndarray, threshold: float) -&gt; np.ndarray:
+    &#34;&#34;&#34;
+    Given an array of scores and a score threshold, return an array of
+    the predictions: 1 for any score &gt;= the threshold and 0 otherwise.
+    
+    Parameters
+    ----------
+    scores: 1D array. 
+        1D array of scores. Dimensions should be (n_obs, n_features).   
+    threshold: float
+        Threshold for considering a observation an anomaly, the higher the less anomalies.
+    Returns
+    -------
+    1D array
+        The prediction array corresponding to 1/0 if anomaly/not anomaly respectively.
+
+    :param scores: 1D array. Scores produced by the random forest.
+    :param threshold: Threshold for considering a observation an anomaly, the higher the less anomalies.
+    :return: Return predictions
+    &#34;&#34;&#34;
+    out = scores &gt;= threshold
+    return out*1</code></pre>
+</details>
+</dd>
+<dt id="DiFF_RF.DiFF_TreeEnsemble.walk"><code class="name flex">
+<span>def <span class="ident">walk</span></span>(<span>self, X: numpy.ndarray) ‑> numpy.ndarray</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Given a nD matrix of observations, X, compute the average path length,
+the distance, frequency and collective anomaly scores
+for instances in X.
+Compute the path length for x_i using every
+tree in self.trees then compute the average for each x_i.
+Return an
+ndarray of shape (len(X),1).</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>X</code></strong> :&ensp;<code>nD array. </code></dt>
+<dd>nD array with the instances to be tested. Dimensions should be (n_obs, n_features).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<pre><code>None
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def walk(self, X: np.ndarray) -&gt; np.ndarray:
+    &#34;&#34;&#34;
+    Given a nD matrix of observations, X, compute the average path length,
+    the distance, frequency and collective anomaly scores
+    for instances in X.  Compute the path length for x_i using every
+    tree in self.trees then compute the average for each x_i.  Return an
+    ndarray of shape (len(X),1).
+    
+    Parameters
+    ----------
+    X: nD array. 
+        nD array with the instances to be tested. Dimensions should be (n_obs, n_features).   
+    Returns
+    -------
+        None
+    &#34;&#34;&#34;
+
+    self.L = np.zeros((len(X), self.n_trees))
+    self.LD = np.zeros((len(X), self.n_trees))
+    self.LF = np.zeros((len(X), self.n_trees))
+    self.LDF = np.zeros((len(X), self.n_trees))
+
+    for treeIdx, itree in enumerate(self.trees):
+        obsIdx = np.ones(len(X)).astype(bool)
+        walk_tree(self, itree, treeIdx, obsIdx, X, self.featureDistrib, alpha=self.alpha)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="DiFF_RF.InNode"><code class="flex name class">
+<span>class <span class="ident">InNode</span></span>
+<span>(</span><span>X, height_limit, featureDistrib, sample_size, current_height)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Node of the tree that is not a leaf node.
+The functionality of the class is:
+- Do the best split from a sample of randomly chosen
+dimensions and split points.
+- Partition the space of observations according to the
+split and send the along to two different nodes
+The method usually has a higher complexity than doing it for every point.
+But because it's using NumPy it's more efficient time-wise.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>X</code></strong> :&ensp;<code>nD array. </code></dt>
+<dd>nD array with the training instances that have reached the node.</dd>
+<dt><strong><code>height_limit</code></strong> :&ensp;<code>int</code></dt>
+<dd>Maximum height of the tree.</dd>
+<dt><strong><code>Xf</code></strong> :&ensp;<code>nD array. </code></dt>
+<dd>distribution used to randomly select a dimension (feature) used at parent level.</dd>
+<dt><strong><code>sample_size</code></strong> :&ensp;<code>int</code></dt>
+<dd>Size of the sample used to build the tree.</dd>
+<dt><strong><code>current_height</code></strong> :&ensp;<code>int</code></dt>
+<dd>Current height of the tree.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<pre><code>None
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InNode:
+    &#39;&#39;&#39;
+    Node of the tree that is not a leaf node.
+    The functionality of the class is:
+    - Do the best split from a sample of randomly chosen
+        dimensions and split points.
+    - Partition the space of observations according to the
+    split and send the along to two different nodes
+    The method usually has a higher complexity than doing it for every point.
+    But because it&#39;s using NumPy it&#39;s more efficient time-wise.
+    &#39;&#39;&#39;
+    def __init__(self, X, height_limit, featureDistrib, sample_size, current_height):
+        &#39;&#39;&#39;
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the training instances that have reached the node.
+        height_limit: int
+            Maximum height of the tree.
+        Xf: nD array. 
+            distribution used to randomly select a dimension (feature) used at parent level. 
+        sample_size: int
+            Size of the sample used to build the tree.
+        current_height: int
+            Current height of the tree.
+        Returns
+        -------
+            None
+        &#39;&#39;&#39;
+
+        self.size = len(X)
+        self.height = current_height+1
+        n_obs, n_features = X.shape
+        next_height = current_height + 1
+        limit_not_reached = height_limit &gt; next_height
+
+        if len(X) &gt; 32:
+            featureDistrib = []
+            nbins = int(len(X)/8)+2
+            for i in range(np.shape(X)[1]):
+                featureDistrib.append(weightFeature(X[:, i], nbins))
+            featureDistrib = np.array(featureDistrib)
+            featureDistrib = featureDistrib/(np.sum(featureDistrib)+1e-5)
+
+        self.featureDistrib = featureDistrib
+
+        cols = np.arange(np.shape(X)[1], dtype=&#39;int&#39;)
+
+        self.splitAtt = rn.choices(cols, weights=featureDistrib)[0]
+        splittingCol = X[:, self.splitAtt]
+        self.splitValue = getSplit(splittingCol)
+        idx = splittingCol &lt;= self.splitValue
+
+        idx = splittingCol &lt;= self.splitValue
+
+        X_aux = X[idx, :]
+
+        self.left = (InNode(X_aux, height_limit, featureDistrib, sample_size, next_height)
+                     if limit_not_reached and X_aux.shape[0] &gt; 5 and (np.any(X_aux.max(0) != X_aux.min(0))) else LeafNode(
+                         X_aux, next_height, X, sample_size))
+
+        idx = np.invert(idx)
+        X_aux = X[idx, :]
+        self.right = (InNode(X_aux, height_limit, featureDistrib, sample_size, next_height)
+                      if limit_not_reached and X_aux.shape[0] &gt; 5 and (np.any(X_aux.max(0) != X_aux.min(0))) else LeafNode(
+                          X_aux, next_height, X, sample_size))
+
+        self.n_nodes = 1 + self.left.n_nodes + self.right.n_nodes</code></pre>
+</details>
+</dd>
+<dt id="DiFF_RF.LeafNode"><code class="flex name class">
+<span>class <span class="ident">LeafNode</span></span>
+<span>(</span><span>X, height, Xp, sample_size)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Leaf node
+The base funcitonality is storing the Mean and standard deviation of the observations in that node.
+We also evaluate the frequency of visit for training data.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>X</code></strong> :&ensp;<code>nD array. </code></dt>
+<dd>nD array with the training instances falling into the leaf node.</dd>
+<dt><strong><code>height</code></strong> :&ensp;<code>int</code></dt>
+<dd>Current height of the tree.</dd>
+<dt><strong><code>Xf</code></strong> :&ensp;<code>nD array. </code></dt>
+<dd>nD array with the training instances falling into the parent node.</dd>
+<dt><strong><code>sample_size</code></strong> :&ensp;<code>int</code></dt>
+<dd>Size of the sample used to build the tree.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<pre><code>None
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class LeafNode:
+    &#39;&#39;&#39;
+    Leaf node
+    The base funcitonality is storing the Mean and standard deviation of the observations in that node.
+    We also evaluate the frequency of visit for training data.
+    &#39;&#39;&#39;
+    def __init__(self, X, height, Xp, sample_size):
+        &#39;&#39;&#39;
+        Parameters
+        ----------
+        X: nD array. 
+            nD array with the training instances falling into the leaf node.    
+        height: int
+            Current height of the tree.
+        Xf: nD array. 
+            nD array with the training instances falling into the parent node.    
+        sample_size: int
+            Size of the sample used to build the tree.
+        Returns
+        -------
+            None
+        &#39;&#39;&#39;
+        self.height = height+1
+        self.size = len(X)
+        self.n_nodes = 1
+        self.freq = self.size/sample_size
+        self.freqs = 0
+
+        if len(X) != 0:
+            self.M = np.mean(X, axis=0)
+            if len(X) &gt; 10:
+                self.Mstd = np.std(X, axis=0)
+                self.Mstd[self.Mstd == 0] = 1e-2
+            else:
+                self.Mstd = np.ones(np.shape(X)[1])
+        else:
+            self.M = np.mean(Xp, axis=0)
+            if len(Xp) &gt; 10:
+                self.Mstd = np.std(Xp, axis=0)
+                self.Mstd[self.Mstd == 0] = 1e-2
+            else:
+                self.Mstd = np.ones(np.shape(X)[1])</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="DiFF_RF.EE" href="#DiFF_RF.EE">EE</a></code></li>
+<li><code><a title="DiFF_RF.create_tree" href="#DiFF_RF.create_tree">create_tree</a></code></li>
+<li><code><a title="DiFF_RF.getSplit" href="#DiFF_RF.getSplit">getSplit</a></code></li>
+<li><code><a title="DiFF_RF.similarityScore" href="#DiFF_RF.similarityScore">similarityScore</a></code></li>
+<li><code><a title="DiFF_RF.walk_tree" href="#DiFF_RF.walk_tree">walk_tree</a></code></li>
+<li><code><a title="DiFF_RF.weightFeature" href="#DiFF_RF.weightFeature">weightFeature</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="DiFF_RF.DiFF_Tree" href="#DiFF_RF.DiFF_Tree">DiFF_Tree</a></code></h4>
+<ul class="">
+<li><code><a title="DiFF_RF.DiFF_Tree.fit" href="#DiFF_RF.DiFF_Tree.fit">fit</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="DiFF_RF.DiFF_TreeEnsemble" href="#DiFF_RF.DiFF_TreeEnsemble">DiFF_TreeEnsemble</a></code></h4>
+<ul class="">
+<li><code><a title="DiFF_RF.DiFF_TreeEnsemble.anomaly_score" href="#DiFF_RF.DiFF_TreeEnsemble.anomaly_score">anomaly_score</a></code></li>
+<li><code><a title="DiFF_RF.DiFF_TreeEnsemble.fit" href="#DiFF_RF.DiFF_TreeEnsemble.fit">fit</a></code></li>
+<li><code><a title="DiFF_RF.DiFF_TreeEnsemble.predict" href="#DiFF_RF.DiFF_TreeEnsemble.predict">predict</a></code></li>
+<li><code><a title="DiFF_RF.DiFF_TreeEnsemble.predict_from_anomaly_scores" href="#DiFF_RF.DiFF_TreeEnsemble.predict_from_anomaly_scores">predict_from_anomaly_scores</a></code></li>
+<li><code><a title="DiFF_RF.DiFF_TreeEnsemble.walk" href="#DiFF_RF.DiFF_TreeEnsemble.walk">walk</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="DiFF_RF.InNode" href="#DiFF_RF.InNode">InNode</a></code></h4>
+</li>
+<li>
+<h4><code><a title="DiFF_RF.LeafNode" href="#DiFF_RF.LeafNode">LeafNode</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.3</a>.</p>
+</footer>
+</body>
+</html>
