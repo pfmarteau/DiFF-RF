@@ -1,16 +1,7 @@
 # DiFF-RF: forest of random partitioning trees for point-wise and collective anomaly detection
 ![](/fig/DiFF-RF.jpg)
 This code is a simple implementation for the DiFF-RF algorithm described in this [draft paper](https://hal.archives-ouvertes.fr/hal-02882548/document), a semi-supervised approach for detecting point-wise or collective anomalies or outliers given a dataset of 'normal' instances. It implements a distance measure to a centroid and a frequency of visit mechanism at leaf level to build point-wise and collective anomaly scores. It solves a drawback identified in the Isolation Forest (IF) algorithm and outperforms in general IF and other state of the art methods in anomaly detection on a large set of diversified application datasets.
-Thanks to cite the above mentioned draft paper if you use this code.
 
-    @misc{marteau2020random,
-        title={Random Partitioning Forest for Point-Wise and Collective Anomaly Detection -- Application to Intrusion Detection},
-        author={Pierre-Francois Marteau},
-        year={2020},
-        eprint={2006.16801},
-        archivePrefix={arXiv},
-        primaryClass={cs.LG}
-    }
 
 This code is derived from the one provided by Xiao Han as an implemention of the Isolation Forest algorithm available at [github.com/xhan0909](https://github.com/xhan0909)
 
@@ -50,6 +41,17 @@ Typical usage (close to sklearn api) is as follows:
 
 ### Creating and evaluating DiFF-RF
     >>> computeDiFF_RF(ntrees=512, sample_size=32)
+    
+Thanks to cite the above mentioned draft paper if you use this code.
+
+    @misc{marteau2020random,
+        title={Random Partitioning Forest for Point-Wise and Collective Anomaly Detection -- Application to Intrusion Detection},
+        author={Pierre-Francois Marteau},
+        year={2020},
+        eprint={2006.16801},
+        archivePrefix={arXiv},
+        primaryClass={cs.LG}
+    }
 
 ### Some of the outputs are saved on disk
 Data is saved in the *PKL* subdirectory
