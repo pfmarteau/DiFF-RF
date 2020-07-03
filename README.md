@@ -41,6 +41,11 @@ Typical usage (close to sklearn api) is as follows:
 
 ### Creating and evaluating DiFF-RF
     >>> computeDiFF_RF(ntrees=512, sample_size=32)
+
+### Some of the outputs are saved on disk
+Data is saved in the *PKL* subdirectory
+Figures are saved in the *FIG* subdirectory
+
     
 Thanks to cite the above mentioned draft paper if you use this code.
 
@@ -52,8 +57,3 @@ Thanks to cite the above mentioned draft paper if you use this code.
         archivePrefix={arXiv},
         primaryClass={cs.LG}
     }
-
-### Some of the outputs are saved on disk
-Data is saved in the *PKL* subdirectory
-Figures are saved in the *FIG* subdirectory
-
