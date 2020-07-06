@@ -299,19 +299,14 @@ class DiFF_TreeEnsemble:
         self.XtestSize = len(X)
         self.alpha = alpha
 
-        # Get the path length for each of the observations.
+        # Evaluate the scores for each of the observations.
         self.walk(X)
 
         # Compute the scores from the path lengths (self.L)
-        if self.sample_size > 2:
-            scD = -self.LD.mean(1)
-        elif self.sample_size == 2:
-            scD = -self.LD.mean(1)
-        else:
-            scD = 0
-
+        scD = -self.LD.mean(1)
         scF = self.LF.mean(1)
         scDF = -self.LDF.mean(1)
+
         return scD, scF, scDF
     
 
