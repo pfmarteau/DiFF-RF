@@ -103,12 +103,19 @@ def weightFeature(s, nbins):
     float
         the importance weight for feature s.
     '''
-    if s.min() == s.max():
-        return 0
-    hist = np.histogram(s, bins=nbins, density=True)
-    ent = EE(hist[0])
+    wmin=.02
+    if not np.isfinite(mins) or not np.isfinite(maxs) or np.abs(mins- maxs)<1e-300:
+        return 1e-4
+
+    hist, bin_edges = np.histogram(s, bins=nbins)
+    #hist = histogram1d(s, range=[mins-1e-4,maxs+1e-4], bins=nbins)
+    ent = EE(hist)
     ent = ent/np.log2(nbins)
-    return 1-ent
+    if np.isfinite(ent):
+         #return max(1/2-abs(1/2-ent), wmin)
+         return max(1-ent, wmin)
+    else:
+         return wmin
 
 
 def walk_tree(forest, node, treeIdx, obsIdx, X, featureDistrib, depth=0, alpha=1e-2):
