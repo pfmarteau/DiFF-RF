@@ -1,6 +1,6 @@
 # DiFF-RF: forest of random partitioning trees for point-wise and collective anomaly detection
 ![](/fig/DiFF-RF.jpg)
-This code is a simple implementation for the DiFF-RF algorithm described in this [draft paper](https://arxiv.org/abs/2006.16801), a semi-supervised approach for detecting point-wise or collective anomalies or outliers given a dataset of 'normal' instances. It implements a distance measure to a centroid and a frequency of visit mechanism at leaf level to build point-wise and collective anomaly scores. It solves a drawback identified in the Isolation Forest (IF) algorithm and outperforms in general IF and other state of the art methods in anomaly detection on a large set of diversified application datasets.
+This code is a simple implementation for the DiFF-RF algorithm described in this [draft paper](https://hal.archives-ouvertes.fr/hal-02882548v2/document), a semi-supervised approach for detecting point-wise or collective anomalies or outliers given a dataset of 'normal' instances. It implements a distance measure to a centroid and a frequency of visit mechanism at leaf level to build point-wise and collective anomaly scores. It solves a drawback identified in the Isolation Forest (IF) algorithm and outperforms in general IF and other state of the art methods in anomaly detection on a large set of diversified application datasets.
 
 
 This code is derived from the one provided by Xiao Han as an implemention of the Isolation Forest algorithm available at [github.com/xhan0909](https://github.com/xhan0909)
@@ -49,11 +49,18 @@ Figures are saved in the *FIG* subdirectory
     
 Thanks to cite the above mentioned draft paper if you use this code.
 
-    @misc{marteau2020random,
-        title={Random Partitioning Forest for Point-Wise and Collective Anomaly Detection -- Application to Intrusion Detection},
-        author={Pierre-Francois Marteau},
-        year={2020},
-        eprint={2006.16801},
-        archivePrefix={arXiv},
-        primaryClass={cs.LG}
-    }
+    @article{marteau:hal-02882548,
+        TITLE = {{Random Partitioning Forest for Point-Wise and Collective Anomaly Detection - Application to Network Intrusion Detection}},
+        AUTHOR = {Marteau, Pierre-Fran{\c c}ois},
+        URL = {https://hal.archives-ouvertes.fr/hal-02882548},
+        JOURNAL = {{IEEE Transactions on Information Forensics and Security}},
+        PUBLISHER = {{Institute of Electrical and Electronics Engineers}},
+        PAGES = {1-16},
+        YEAR = {2021},
+        MONTH = Jan,
+        DOI = {10.1109/TIFS.2021.3050605},
+        KEYWORDS = {Machine Learning ; Semisupervised Learning ; NIDS ; Random Forest ; Anomaly Detection ; Random Partitioning Trees ; Semi- supervised Learning ; Intrusion Detection},
+        PDF = {https://hal.archives-ouvertes.fr/hal-02882548v2/file/DiFF-RF-v3.pdf},
+        HAL_ID = {hal-02882548},
+        HAL_VERSION = {v2},
+        }
