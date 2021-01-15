@@ -1,6 +1,6 @@
 # DiFF-RF: forest of random partitioning trees for point-wise and collective anomaly detection
 ![](/fig/DiFF-RF.jpg)
-This code is a simple implementation for the DiFF-RF algorithm described in this [draft paper](https://hal.archives-ouvertes.fr/hal-02882548v2/document), a semi-supervised approach for detecting point-wise or collective anomalies or outliers given a dataset of 'normal' instances. It implements a distance measure to a centroid and a frequency of visit mechanism at leaf level to build point-wise and collective anomaly scores. It solves a drawback identified in the Isolation Forest (IF) algorithm and outperforms in general IF and other state of the art methods in anomaly detection on a large set of diversified application datasets.
+This code is a simple implementation for the DiFF-RF algorithm described in this [draft paper](https://arxiv.org/abs/2006.16801), a semi-supervised approach for detecting point-wise or collective anomalies or outliers given a dataset of 'normal' instances. It implements a distance measure to a centroid and a frequency of visit mechanism at leaf level to build point-wise and collective anomaly scores. It solves a drawback identified in the Isolation Forest (IF) algorithm and outperforms in general IF and other state of the art methods in anomaly detection on a large set of diversified application datasets.
 
 
 This code is derived from the one provided by Xiao Han as an implemention of the Isolation Forest algorithm available at [github.com/xhan0909](https://github.com/xhan0909)
@@ -21,7 +21,7 @@ No extra requirement is needed apart numpy.
 
 A running example exploiting 'donnuts' data is given in file testDiFF_RF_Donnuts.py
 
-The API documentation (html àr pdf) is described in the file documentation/DiFF-RF-API.(html/pdf)
+The API documentation (html or pdf) is described in the file documentation/DiFF-RF-API.(html/pdf)
 (generated using $ pdoc3 DiFF_RF.py --html --force)
 
 Typical usage (close to sklearn api) is as follows:
