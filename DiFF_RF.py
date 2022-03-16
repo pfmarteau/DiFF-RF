@@ -104,15 +104,15 @@ def weightFeature(s, nbins):
         the importance weight for feature s.
     '''
     wmin=.02
+    mins=s.min()
+    maxs=s.max()
     if not np.isfinite(mins) or not np.isfinite(maxs) or np.abs(mins- maxs)<1e-300:
         return 1e-4
 
     hist, bin_edges = np.histogram(s, bins=nbins)
-    #hist = histogram1d(s, range=[mins-1e-4,maxs+1e-4], bins=nbins)
     ent = EE(hist)
     ent = ent/np.log2(nbins)
     if np.isfinite(ent):
-         #return max(1/2-abs(1/2-ent), wmin)
          return max(1-ent, wmin)
     else:
          return wmin
