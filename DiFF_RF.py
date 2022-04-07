@@ -215,7 +215,7 @@ class DiFF_TreeEnsemble:
         rn.seed(int(time.time()))
 
 
-    def fit(self, X: (np.ndarray), n_jobs: int = 4):
+    def fit(self, X: (np.ndarray), n_jobs: int = 1):
         """
         Fits the algorithm into a model.
         Given a 2D matrix of observations, create an ensemble of IsolationTree
