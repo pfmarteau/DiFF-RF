@@ -175,9 +175,9 @@ def computeDiff_RF(ntrees=1024, sample_size_ratio=.33, alpha0=.1):
     print("DiFF_RF (frequency of visit scoring only) AUC=", aucF)
     print("DiFF_RF (collective anomaly score) AUC=", aucDF)
 
+if __name__ == '__main__': 
+    # create donnuts data
+    createDonutData(contamin=0)
 
-# create donnuts data
-createDonutData(contamin=0)
-
-# build and test IF and DiFF-RF
-computeDiff_RF(ntrees=256, sample_size_ratio=.25, alpha0=1)
+    # build and test IF and DiFF-RF
+    computeDiff_RF(ntrees=256, sample_size_ratio=.25, alpha0=1)
