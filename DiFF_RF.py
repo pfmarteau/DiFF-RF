@@ -341,7 +341,7 @@ class DiFF_TreeEnsemble:
         return out*1
     
 
-    def predict(self, X: np.ndarray, threshold: float, score_type: int) -> np.ndarray:
+    def predict(self, X: np.ndarray, threshold: float, score_type: int=2) -> np.ndarray:
         """
         A shorthand for calling anomaly_score() and predict_from_anomaly_scores().
         
@@ -357,8 +357,8 @@ class DiFF_TreeEnsemble:
         1D array
             The prediction array corresponding to 1/0 if anomaly/not anomaly respectively.
         """
-        if not score_type in [0,1,2]:
-            print("ERROR in predict() function: score_type shoud be either 0 for distance score, 1 for frequency of visit score or 2 for collective anomaly score")
+        if score_type>2 or score_type<0:
+            print("ERROR ine predict() function, score_type shoud be 0 for distance score,1 for frequency of visit score or 2 for collective anomaly score")
             sys.exit(-1)
         scores = self.anomaly_score(X)
         return self.predict_from_anomaly_scores(scores[score_type], threshold)
