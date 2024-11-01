@@ -10,7 +10,7 @@ Created on Tue Mar 24 12:19:32 2020
 # https://github.com/xhan0909/isolation_forest
 
 import numpy as np
-import time
+import time, sys
 from functools import partial
 from multiprocessing import Pool
 
@@ -301,7 +301,7 @@ class DiFF_TreeEnsemble:
         Returns
         -------
         scD, scF, scFF: 1d arrays
-            respectively the distance scores (point-wise anomaly score), the frequency of visit socres and the collective anomaly scores
+            respectively the distance scores (point-wise anomaly score), the frequency of visit scores and the collective anomaly scores
         """
         self.XtestSize = len(X)
         self.alpha = alpha
@@ -341,7 +341,7 @@ class DiFF_TreeEnsemble:
         return out*1
     
 
-    def predict(self, X: np.ndarray, threshold: float) -> np.ndarray:
+    def predict(self, X: np.ndarray, threshold: float, score_type: int) -> np.ndarray:
         """
         A shorthand for calling anomaly_score() and predict_from_anomaly_scores().
         
@@ -351,14 +351,17 @@ class DiFF_TreeEnsemble:
             nD array with the tested observations to be predicted. Dimensions should be (n_obs, n_features).   
         threshold: float
             Threshold for considering a observation an anomaly, the higher the less anomalies.
+        score_type: 0: distance socre, 1: frequency of visit score, 2: collective anomaly score
         Returns
         -------
         1D array
             The prediction array corresponding to 1/0 if anomaly/not anomaly respectively.
         """
-
+        if not score_type in [0,1,2]:
+            print("ERROR in predict() function: score_type shoud be either 0 for distance score, 1 for frequency of visit score or 2 for collective anomaly score")
+            sys.exit(-1)
         scores = self.anomaly_score(X)
-        return self.predict_from_anomaly_scores(scores, threshold)
+        return self.predict_from_anomaly_scores(scores[score_type], threshold)
 
 
 class DiFF_Tree:
